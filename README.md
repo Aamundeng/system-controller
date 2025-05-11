@@ -41,7 +41,7 @@ This code implements two types of controllers:
 
 The system can in principle regulate any model, but has only been tested on simple systems governed by difference or differential equations. To make a new model:
 
-1. create a "simulation function" which accepts application specific tuple-parameters "vars" and "constants" and control signal and noise elements "U" and "D", along with an "update" flag telling if we want to update the system variables or merely retrieve the setpoint. If 'update' is true it should return the variables-tuple (note: in many applications the only 'variable' will just be the value we want to regulate) after a timestep, when the models dynamics and the control signal have been applied. If 'update' is false, it should merely return the current value of the system. For example for the model of the logistic growth of a fish population:
+1. create a "simulation function" which accepts application specific tuple-parameters "vars" and "constants" and control signal and noise elements "U" and "D", along with an "update" flag telling if we want to update the system variables or merely retrieve the setpoint. If 'update' is true it should return the variables-tuple (note: in many applications the only 'variable' will just be the value we want to regulate) after a timestep, when the models dynamics and the control signal have been applied. If 'update' is false, it should merely return the current value of the system. For example for the model of a fish population following the difference equation `ΔPopulation = growth * population * (1 - population / (max. sustainable pop.)) - fishing + noise` we can write:
 
 ```python
 def fishing_sim(vars, constants, U=0, D=0, update=False):
