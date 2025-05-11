@@ -1,0 +1,4 @@
+matplotlib
+jax
+optax
+flax
