@@ -1,6 +1,6 @@
 # Controlling dynamic systems with JAX
 
-This project implements a controller system for regulating physical or economic systems to a desired level when noise and system dynamics are causing disturbances. The implementation includes both a traditional PID controller and a neural network-based controller. It uses the JAX library, which applies just-in-time compilation with XLA (accelerated linear algebra) to quickly compute gradients.
+This project implements a controller system for regulating the output of an environment to a desired level when noise and system dynamics are causing disturbances. The implementation includes both a traditional PID controller and a neural network-based controller. It uses the JAX library, which applies just-in-time compilation with XLA (accelerated linear algebra) to quickly compute gradients.
 
 ## Explanation of PID Controllers
 
